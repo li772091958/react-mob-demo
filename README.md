@@ -1,1 +1,1 @@
-# react-mob-demo
+# react-mobx-demo
