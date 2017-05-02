@@ -1,14 +1,15 @@
 import { observable, action } from 'mobx'
 import api from '../utils/api'
 
-class AppState {
+class HomeState {
   @observable title = 'Hello, Mobx!';
   @observable province = [];
 
   async fetchData() {
-    let data = await api('http://www.shanlinbao.com/parameterController/findByType?type=province', 'get', {type: 'province'});
+    let data = await api('/mobilecdn/api/v3/search/hot');
+    //debugger
     console.log(data);
-    this.setData(data);
+    this.setData(data.data.info);
   }
 
   @action setData(data) {
@@ -17,4 +18,4 @@ class AppState {
   
 }
 
-export default AppState;
+export default HomeState;

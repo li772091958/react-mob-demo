@@ -7,8 +7,9 @@ import { Router,browserHistory } from 'react-router';
 import { Provider } from 'mobx-react'
 import routes from './routes';
 
-import AppState from './store/index'
+import AppState from './store/home'
 const appState = new AppState();
+console.info(appState)
 
 render(
     <Provider store={appState}>
